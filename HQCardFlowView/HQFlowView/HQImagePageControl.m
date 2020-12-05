@@ -37,8 +37,14 @@
         //配置imageView
         UIImageView * view = vi.subviews[0];
         
-        if (i == self.currentPage) view.image = activeImage;
-        else view.image = inactiveImage;
+        if (![view isKindOfClass:[UIImageView class]]) {
+            return;
+        }
+        if (i == self.currentPage) {
+            view.image = activeImage;
+        } else {
+            view.image = inactiveImage;
+        }
     }
 }
 
